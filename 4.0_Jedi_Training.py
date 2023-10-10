@@ -1,60 +1,81 @@
 # 4.0 Jedi Training (40pts)  Name:________________
-#Below each program list the mistakes found in comments.
+# Below each program list the mistakes found in comments.
 
-  #1. Make the following program work. (3 mistakes)  (3pts)
+# 1. Make the following program work. (3 mistakes)  (3pts)
+
+# midichlorians = float(input("Enter midichlorian count: "))
+# if midichlorians > 10000:
+#     print("You have serious Jedi potential")
+# else:
+#     print("Jedi, you will never be.")
+
+# indentation error(s) on first line
+# parenthesis missing in variable declaration
+# colon missing after first if statement
+# change elif to else and add colon
+
+# 2. Make the following program work. (3 mistakes)  (3pts)
      
-     midichlorians = float(input("Enter midichlorian count: ")
-     if midichlorians > 10000
-         print("You have serious Jedi potential")
-     elif:
-         print("Jedi, you will never be.")
+# x = input("Enter a number: ")
+# if x == 3:
+#     print("You entered 3")
 
+# indentation error on first line
+# colon missing in if statement
+# use == in comparison
 
- # 2. Make the following program work. (3 mistakes)  (3pts)
+# 3. Make the following program work. (4 mistakes)  (4pts)
+
+# answer = input("What is the name of Poe Dameron's Droid? ")
+# if answer == "BB8":
+#     print("Correct!")
+# else:
+#     print("Incorrect! It is BB8.")
+
+# indentation on first line
+# if statement indentation
+# change 'a' to answer
+# == for comparison
+# add : after else
+# 4. Make the following program work. (4 mistakes) (4pts)
      
-     x = input("Enter a number: ")
-     if x = 3
-         print("You entered 3")
+# jedi = input("Name one of the top 3 greatest Jedi.")
+# if jedi == "Yoda" or "Luke Skywalker" or "Obi-Wan Kenobi":
+#     print("That is correct!")
 
+# "" around yoda
+# "" around luke skywalker
+# "" around obi-wan- kenobi
+# () around print statement
+# change x to jedi
 
-  # 3. Make the following program work. (4 mistakes)  (4pts)
+# 5. Make the following program work whether they enter 'a', A, Jedi Master or jedi master
+#    Print "Not a choice!" if they don't choose any of the three and set sensitivity to blank text.  (6pts)
      
-     answer = input("What is the name of Poe Dameron's Droid? ")
-     if a = "BB8":
-         print("Correct!")
-         else
-         print("Incorrect! It is BB8.")
+# print("Welcome to the Jedi Academy!")
+#
+# print("A. Jedi Master")
+# print("B. Sith Lord")
+# print("C. Droid")
+#
+# user_input = input("Choose a character?: ")
+#
+# if user_input.lower() == "a":
+#     sensitivity = 1000
+# elif user_input.lower() == "jedi master":
+#     sensitivity = 1000
+# else:
+#     sensitivity = " "
+#     print("Not a choice!")
+#
+# print("Sensitivity: ", sensitivity)
 
-
-  # 4. Make the following program work. (4 mistakes) (4pts)
-     
-     x = input("Name one of the top 3 greatest Jedi.")
-     if jedi == Yoda or Luke Skywalker or Obi-Wan Kenobi:
-         print "That is correct!"
-
-
-
- # 5. Make the following program work whether they enter a, A, Jedi Master or jedi master
- #    Print "Not a choice!" if they don't choose any of the three and set sensitivity to blank text.  (6pts)
-     
-     print("Welcome to the Jedi Academy!")
-
-     print("A. Jedi Master")
-     print("B. Sith Lord")
-     print("C. Droid")
-
-     user_input = input("Choose a character?")
-
-     if user_input = A:
-         sensitivity = 1000
-     else if user_input = B:
-         sensitivity = 900
-     else if user_input = C:
-         sensitivity = 0
-
-     print("Sensitivity: ",Sensitivity)
-
-
+# indentations
+# "" around A
+# use == for comparison checks
+# elif instead of else if
+# lowercase 's' in sensitivity
+# change to else at the end
 
 
 '''
@@ -79,14 +100,77 @@ Out:  Test 1: Odd
 '''
 
 
+def number_report():
+    num = int(input("Give a number and we'll read out the characteristics of that number:\n"))
+
+    remainder = num % 2
+    if remainder == 0:
+        test_1 = "Even"
+    else:
+        test_1 = "Odd"
+
+    if num < 0:
+        test_2 = "Negative"
+    else:
+        test_2 = "Positive"
+
+    if num < -100:
+        test_3 = "Exclusive"
+    elif num > 100:
+        test_3 = "Exclusive"
+    else:
+        test_3 = "Inclusive"
+
+    print("Test 1: ", test_1)
+    print("Test 2: ", test_2)
+    print("Test 3: ", test_3)
+
+
+# number_report()
 
 
 
 '''
 GRADING 2.0    (10pts)
 -------------------
-Copy your Grading 1.0 program below and then modify it to also print out the letter grade depending on the numerical grade.
+Copy your Grading 1.0 program below and then modify it to also print out the letter grade depending on the numerical 
+grade.
 If they fail, tell them to "Transfer to Johnston!"
 '''
 
+
+def grade_calc():
+    sg = float(input("What was your semester grade?\n:"))
+    fe = float(input("What was your final exam grade\n:"))
+    ew = float(input("How much is the final exam worth?\n:"))
+    fg = ((ew*fe) + (100-ew)*sg)/100
+
+    if fg >= 93:
+        lg = "A"
+    elif 90 <= fg <= 92:
+        lg = "A-"
+    elif 87 <= fg <= 89:
+        lg = "B+"
+    elif 83 <= fg <= 86:
+        lg = "B"
+    elif 80 <= fg <= 82:
+        lg = "B-"
+    elif 77 <= fg <= 79:
+        lg = "C+"
+    elif 73 <= fg <= 76:
+        lg = "C"
+    elif 70 <= fg <= 72:
+        lg = "C-"
+    elif 67 <= fg <= 69:
+        lg = "D+"
+    elif 63 <= fg <= 66:
+        lg = "D"
+    elif 60 <= fg <= 62:
+        lg = "D-"
+    else:
+        lg = "F"
+    print("Your overall grade for the class is:", fg, "\nThis is a(n):", lg)
+
+
+# grade_calc()
 

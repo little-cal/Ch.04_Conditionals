@@ -39,9 +39,11 @@
 # add : after else
 # 4. Make the following program work. (4 mistakes) (4pts)
      
-# jedi = input("Name one of the top 3 greatest Jedi.")
-# if jedi == "Yoda" or "Luke Skywalker" or "Obi-Wan Kenobi":
-#     print("That is correct!")
+jedi = input("Name one of the top 3 greatest Jedi.\n:")
+if jedi.lower() == "yoda" or jedi.lower() == "luke skywalker" or jedi.lower() == "obi-wan kenobi":
+    print("That is correct!")
+else:
+    print("That person isn't one of the greatest jedi.")
 
 # "" around yoda
 # "" around luke skywalker
@@ -52,23 +54,25 @@
 # 5. Make the following program work whether they enter 'a', A, Jedi Master or jedi master
 #    Print "Not a choice!" if they don't choose any of the three and set sensitivity to blank text.  (6pts)
      
-# print("Welcome to the Jedi Academy!")
-#
-# print("A. Jedi Master")
-# print("B. Sith Lord")
-# print("C. Droid")
-#
-# user_input = input("Choose a character?: ")
-#
-# if user_input.lower() == "a":
-#     sensitivity = 1000
-# elif user_input.lower() == "jedi master":
-#     sensitivity = 1000
-# else:
-#     sensitivity = " "
-#     print("Not a choice!")
-#
-# print("Sensitivity: ", sensitivity)
+print("Welcome to the Jedi Academy!")
+
+print("A. Jedi Master")
+print("B. Sith Lord")
+print("C. Droid")
+
+user_input = input("Choose a character?: ")
+
+if user_input.lower() == "a" or user_input.lower() == "jedi master":
+    sensitivity = 1000
+elif user_input.lower() == "b" or user_input.lower() == "sith lord":
+    sensitivity = 900
+elif user_input.lower() == "c" or user_input.lower() == "droid":
+    sensitivity = 0
+else:
+    sensitivity = " "
+    print("Not a choice!")
+
+print("Sensitivity: ", sensitivity)
 
 # indentations
 # "" around A
@@ -108,15 +112,13 @@ def number_report():
         test_1 = "Even"
     else:
         test_1 = "Odd"
-
     if num < 0:
         test_2 = "Negative"
-    else:
+    elif num > 0:
         test_2 = "Positive"
-
-    if num < -100:
-        test_3 = "Exclusive"
-    elif num > 100:
+    else:
+        test_2 = "Zero"
+    if num < -100 or num > 100:
         test_3 = "Exclusive"
     else:
         test_3 = "Inclusive"
@@ -126,7 +128,7 @@ def number_report():
     print("Test 3: ", test_3)
 
 
-# number_report()
+number_report()
 
 
 
@@ -147,30 +149,32 @@ def grade_calc():
 
     if fg >= 93:
         lg = "A"
-    elif 90 <= fg <= 92:
+    elif 90 <= fg <= 92.9:
         lg = "A-"
-    elif 87 <= fg <= 89:
+    elif 87 <= fg <= 89.9:
         lg = "B+"
-    elif 83 <= fg <= 86:
+    elif 83 <= fg <= 86.9:
         lg = "B"
-    elif 80 <= fg <= 82:
+    elif 80 <= fg <= 82.9:
         lg = "B-"
-    elif 77 <= fg <= 79:
+    elif 77 <= fg <= 79.9:
         lg = "C+"
-    elif 73 <= fg <= 76:
+    elif 73 <= fg <= 76.9:
         lg = "C"
-    elif 70 <= fg <= 72:
+    elif 70 <= fg <= 72.9:
         lg = "C-"
-    elif 67 <= fg <= 69:
+    elif 67 <= fg <= 69.9:
         lg = "D+"
-    elif 63 <= fg <= 66:
+    elif 63 <= fg <= 66.9:
         lg = "D"
-    elif 60 <= fg <= 62:
+    elif 60 <= fg <= 62.9:
         lg = "D-"
     else:
         lg = "F"
     print("Your overall grade for the class is:", fg, "\nThis is a(n):", lg)
+    if lg == "F":
+        print("Transfer to Johnston!")
 
 
-# grade_calc()
+grade_calc()
 
